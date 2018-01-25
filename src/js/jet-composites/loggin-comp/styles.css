@@ -1,0 +1,7 @@
+loggin-comp:not(.oj-complete){
+  visibility: hidden;
+}
+
+loggin-comp{
+
+}

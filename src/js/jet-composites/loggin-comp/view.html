@@ -1,0 +1,19 @@
+<!--
+  Copyright (c) 2015, 2017, Oracle and/or its affiliates.
+  The Universal Permissive License (UPL), Version 1.0
+-->
+<p data-bind="text:messageText"></p>
+<br></br>
+<h3>Username</h3>
+ <oj-input-text id="text-input" data-bind="value:username"></oj-input-text>
+
+<br></br>
+<h3>Password</h3>
+<oj-input-password id="password" data-bind="value:password"></oj-input-password>
+
+<br></br>
+<h3>AIS url</h3>
+<oj-input-text id="text-input" data-bind="value:aisurl"></oj-input-text>
+
+<br></br>
+<button data-bind="click:getToken">Submit</button>

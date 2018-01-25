@@ -1,0 +1,7 @@
+form-comp:not(.oj-complete){
+  visibility: hidden;
+}
+
+form-comp{
+
+}
