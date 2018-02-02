@@ -3,10 +3,10 @@
   The Universal Permissive License (UPL), Version 1.0
 */
 define(
-  ['ojs/ojcore', 'knockout', 'jquery'],
+  ['ojs/ojcore', 'knockout', 'jquery','ojs/ojrouter'],
   function(oj, ko, $) {
     'use strict';
-
+var router = oj.Router.rootInstance;
     function ExampleComponentModel(context) {
       var self = this;
       // self.composite = context.element;
@@ -20,9 +20,9 @@ define(
 
 
       var req = {}
-
+// this function gets the data
       self.getFormData = function() {
-
+console.log("------------------------");
         req.token = localStorage.getItem("token");
         req.deviceName = "sivurs3";
         req.formName =  "P4101_W4101E",
@@ -54,14 +54,20 @@ define(
             }
           })
           .done(function(data) {
-            console.log(data);
-            // console.log(localStorage.setItem("token", results.));
+
+           self.datasource = ko.observable(data)
           })
 
 
 
+      }
+
+      self.backFunction = function(){
+      //this function is a back function
+        self.backButton = router.go('signIn');
 
       }
+
 
       context.props.then(function(propertyMap) {
         //Store a reference to the properties for any later use
